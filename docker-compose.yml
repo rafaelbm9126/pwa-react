@@ -34,9 +34,12 @@ services:
     volumes:
       - ${PWD}/app/build:/usr/share/nginx/html:ro
     environment:
-      - VIRTUAL_HOST=rafaelbm91.com,www.rafaelbm91.com
-      - LETSENCRYPT_HOST=rafaelbm91.com,www.rafaelbm91.com
-      - LETSENCRYPT_EMAIL=rafaelbm9126@gmail.com
+      # - VIRTUAL_HOST=rafaelbm91x.com,www.rafaelbm91x.com
+      # - LETSENCRYPT_HOST=rafaelbm91x.com,www.rafaelbm91x.com
+      # - LETSENCRYPT_EMAIL=rafaelbm9126x@gmail.com
+      - VIRTUAL_HOST=rbm91test.duckdns.org,www.rbm91test.duckdns.org
+      - LETSENCRYPT_HOST=rbm91test.duckdns.org,www.rbm91test.duckdns.org
+      - LETSENCRYPT_EMAIL=rbm91test@gmail.com
 
 volumes: 
   certs:
