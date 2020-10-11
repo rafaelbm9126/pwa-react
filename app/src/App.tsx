@@ -10,6 +10,22 @@ function App() {
         <p>
           Hello PWA fron ReactJS
         </p>
+        <table>
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>name</th>
+              <th>birthday</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Rafael</td>
+              <td>{Date()}</td>
+            </tr>
+          </tbody>
+        </table>
       </header>
     </div>
   );

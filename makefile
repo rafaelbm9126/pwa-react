@@ -1,5 +1,5 @@
-run:
-	docker run -it -v ${PWD}/app:/app -p 80:3000 -w /app -name service node:latest npm run start
+dev:
+	docker run -it -v ${PWD}/app:/app -p 80:3000 -w /app --name service node:latest npm run start
 
 install:
 	docker run -it -v ${PWD}/app:/app -w /app --name service node:latest npm install
