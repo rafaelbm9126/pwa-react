@@ -24,6 +24,11 @@ function App() {
               <td>Rafael</td>
               <td>{Date()}</td>
             </tr>
+            <tr>
+              <td>2</td>
+              <td>Jose</td>
+              <td>{Date()}</td>
+            </tr>
           </tbody>
         </table>
       </header>
