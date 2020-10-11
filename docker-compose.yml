@@ -34,8 +34,8 @@ services:
     volumes:
       - ${PWD}/app/build:/usr/share/nginx/html:ro
     environment:
-      - VIRTUAL_HOST=rafaelbm91.com
-      - LETSENCRYPT_HOST=rafaelbm91.com
+      - VIRTUAL_HOST=rafaelbm91.com,www.rafaelbm91.com
+      - LETSENCRYPT_HOST=rafaelbm91.com,www.rafaelbm91.com
       - LETSENCRYPT_EMAIL=rafaelbm9126@gmail.com
 
 volumes: 
