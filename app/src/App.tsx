@@ -36,6 +36,8 @@ function App() {
             </tr>
           </tbody>
         </table>
+        <br/>
+        <button onClick={() => window.location.reload(true)}>RELOAD</button>
       </header>
     </div>
   );
