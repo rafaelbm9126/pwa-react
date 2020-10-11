@@ -11,4 +11,4 @@ up: build
 	docker run -v ${PWD}/app:/app -p 80:3000 -w /app node:latest npm run serve
 
 start: build
-	docker-compose up
+	docker-compose up -d
