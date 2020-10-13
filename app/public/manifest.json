@@ -1,6 +1,6 @@
 {
   "short_name": "react-pwa",
-  "name": "This is an example PWA ReactJS",
+  "name": "PWA with ReactJS MUSIC",
   "icons": [
     {
       "src": "favicon.ico",
@@ -21,6 +21,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#fff",
-  "background_color": "#282c34"
+  "theme_color": "black",
+  "background_color": "white"
 }
