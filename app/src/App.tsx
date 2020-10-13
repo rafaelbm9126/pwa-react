@@ -60,7 +60,7 @@ const Albums: React.FunctionComponent<AlbumsModel & { bandImg: string }> = (prop
             <img src={props.bandImg} alt="band" />
           </figure>
         </div>
-        <div className="media-content">
+        <div className="media-content" style={{overflow: "hidden"}}>
           <p className="title is-4">{props.name}</p>
           <p className="subtitle" style={{fontSize: 12}}>{props.id}</p>
         </div>
@@ -78,6 +78,7 @@ interface ResponseModel {
 export const App: React.FunctionComponent<{}> = () => {
   const [byName, setByName] = React.useState("");
   const [setFind, { loading, data }] = useLazyQuery<ResponseModel>(EXCHANGE_RATES);
+  let inputRef: HTMLInputElement | null = null;
 
   React.useEffect(() => {
     // inital page
@@ -117,10 +118,16 @@ export const App: React.FunctionComponent<{}> = () => {
           <div className="control">
             <input
               className="input" type="text"
+              ref={(ref) => inputRef = ref}
               placeholder="Find a Band"
-              defaultValue={byName}
-              onInput={(e) => setByName(e.currentTarget.value)}
-              onKeyPress={(e) => e.key === "Enter" && setFind({ variables: { byName }})}
+              value={byName}
+              onChange={(e) => setByName(e.currentTarget.value)}
+              onKeyPress={(e) => {
+                if (e.key === "Enter") {
+                  setFind({ variables: { byName }});
+                  inputRef?.blur();
+                }
+              }}
             />
           </div>
           <div className="control">
@@ -142,7 +149,7 @@ export const App: React.FunctionComponent<{}> = () => {
             <div className="columns is-gapless is-multiline is-mobile is-centered">
               {
                 item.albums.map((album, akey) =>
-                  <div key={akey} className="column">
+                  <div key={akey} className="column" style={{display: "flex", justifyContent: "center"}}>
                     <Albums {...album} bandImg={item.image || logo} />
                   </div>
                 )
