@@ -2,7 +2,8 @@ dev:
 	docker run -it --rm -v ${PWD}/app:/app -p 80:3000 -w /app --name service node:latest npm run start
 
 install:
-	docker run -it --rm -v ${PWD}/app:/app -w /app --name service node:latest npm install
+	sudo rm -r  app/node_modules
+	docker run -it --rm -v ${PWD}/app:/app -w /app --name service node:latest yarn install
 
 bash:
 	docker run -it --rm -v ${PWD}/app:/app -w /app --name service node:latest bash
